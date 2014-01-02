@@ -17,6 +17,7 @@ title: Quick Start Index
 * [HP Cloud Services](/documentation/quickstart/hpcloud)
 * [Open Stack](/documentation/quickstart/openstack)
 * [Rackspace](/documentation/quickstart/rackspace)
+* [SoftLayer CloudLayer Compute](/documentation/quickstart/softlayer_cloudlayer_compute)
 * [Terremark eCloud](/documentation/quickstart/terremark-ecloud)
 * [Terremark vCloud Express](/documentation/quickstart/terremark-vcloud-express)
 * [Virtualbox](/documentation/quickstart/virtualbox)

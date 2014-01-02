@@ -21,6 +21,7 @@ title: User Guides Index
 * [HP Cloud Services](/documentation/quickstart/hpcloud)
 * [OpenStack](/documentation/quickstart/openstack)
 * [Rackspace](/documentation/quickstart/rackspace)
+* [SoftLayer CloudLayer Compute](/documentation/quickstart/softlayer_cloudlayer_compute)
 * [Terremark](/documentation/userguide/terremark)
 * [Terremark eCloud](/documentation/quickstart/terremark-ecloud)
 * [Terremark vCloud Express](/documentation/quickstart/terremark-vcloud-express)

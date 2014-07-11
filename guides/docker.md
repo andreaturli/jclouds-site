@@ -11,12 +11,12 @@ providers, it supports the same portable abstractions offered by jclouds.
 
 In order to mimic the behavior of the nodes that jclouds is able to manage, we need to make the Docker containers similar to any other VM.
 Fortunately, to have that is not much work: the only prerequisite is that the node needs to be ssh’able. 
-This involved [dockerizing an SSH daemon service](https://docs.docker.com/examples/running_ssh_service/)
+This involves [dockerizing an SSH daemon service](https://docs.docker.com/examples/running_ssh_service/).
 
 ### Give it a try!
 
 * Install [Docker](http://https://docs.docker.com/installation/)
-* Ensure you are using a recent JDK 6
+* Ensure you are using a recent JDK 7
 * Setup your project to include `docker`
 	* Get the dependency `org.jclouds.labs/docker` using jclouds [Installation](/start/install).
 * Start coding
@@ -31,7 +31,7 @@ ComputeServiceContext context = ContextBuilder.newBuilder("docker")
 ComputeService client = context.getComputeService();
 
 String sshableImageId = "your-sshable-image-id"; // this can be obtained using `docker images --no-trunc` command
-Template template = client.templateBuilder().imageId(sshableImageId).build()
+Template template = client.templateBuilder().imageId(sshableImageId).build();
 
 // run a couple nodes accessible via group container
 Set<? extends NodeMetadata> nodes = client.runNodesInGroup("container", 2, template);
@@ -40,4 +40,5 @@ Set<? extends NodeMetadata> nodes = client.runNodesInGroup("container", 2, templ
 context.close();
 {% endhighlight %}
 
-As you would have expected for any other jclouds API.
+As for any other jclouds API, this code will create for you 2 nodes in the group `container` using the provided template.
+The only (big) difference is that jclouds-docker will spin up 2 docker containers for you, instead of being 2 plain-old virtual machines, as it generally happens for the other cloud providers.

@@ -25,6 +25,7 @@ This involves [dockerizing an SSH daemon service](https://docs.docker.com/exampl
 // get a context with docker that offers the portable ComputeService api
 ComputeServiceContext context = ContextBuilder.newBuilder("docker")
                       .credentials(email, password)
+                      .endpoint("http://your-docker-engine-host:2375")
                       .modules(ImmutableSet.<Module> of(new Log4JLoggingModule(),
                                                         new SshjSshClientModule()))
                       .buildView(ComputeServiceContext.class);
@@ -39,6 +40,8 @@ Set<? extends NodeMetadata> nodes = client.runNodesInGroup("container", 2, templ
 // release resources
 context.close();
 {% endhighlight %}
+
+This assumes that `your-docker-engine-host` has docker remote API enabled over tcp.
 
 As for any other jclouds API, this code will create for you 2 nodes in the group `container` using the provided template.
 The only (big) difference is that jclouds-docker will spin up 2 docker containers for you, instead of being 2 plain-old virtual machines, as it generally happens for the other cloud providers.

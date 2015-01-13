@@ -41,7 +41,7 @@ Set<? extends NodeMetadata> nodes = client.runNodesInGroup("container", 2, templ
 context.close();
 {% endhighlight %}
 
-This assumes that `your-docker-engine-host` has docker remote API enabled over tcp.
+This assumes that `your-docker-engine-host` has the [Docker remote API](https://docs.docker.com/reference/api/docker_remote_api/) enabled over TCP.
 
 As for any other jclouds API, this code will create for you 2 nodes in the group `container` using the provided template.
 The only (big) difference is that jclouds-docker will spin up 2 docker containers for you, instead of being 2 plain-old virtual machines, as it generally happens for the other cloud providers.
